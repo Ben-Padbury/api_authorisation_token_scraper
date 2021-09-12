@@ -21,6 +21,8 @@ tests = [
 
 [build-system]
 requires = [
+    'selenium >= 3.141.0',
+    'selenium-wire >= 3.0.5',
     'setuptools >= 35.0.2',
 ]
 build-backend = 'setuptools.build_meta'
