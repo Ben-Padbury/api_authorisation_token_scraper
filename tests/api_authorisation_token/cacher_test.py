@@ -16,7 +16,7 @@ sys.path.insert(
 )
 
 
-import api_authorisation_token.cache as sut
+import api_authorisation_token.cacher as sut
 
 # Test that we get back an actual bearer token.
 def test_cache():
