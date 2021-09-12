@@ -1,6 +1,6 @@
 # Workspace files.
 .idea
-venv
+.venv
 
 # Testing files.
 tests/.pytest_cache

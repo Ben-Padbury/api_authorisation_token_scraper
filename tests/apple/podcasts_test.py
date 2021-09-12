@@ -9,12 +9,12 @@ sys.path.insert(
         os.path.dirname(__file__),
         '..',
         '..',
-        'api_authorisation_token_scraper'
+        'src'
     )
 )
 
 
-import apple.podcasts as sut
+import api_authorisation_token_scraper.apple.podcasts as sut
 
 # Test that we get back an actual bearer token.
 # def test_output():

@@ -1,0 +1,26 @@
+[project]
+name = 'api_authorisation_token_scraper'
+version = "0.0.1"
+description = 'Scrape authorisation tokens for various APIs.'
+requires-python = ">=3.9"
+authors = [
+  {email = 'bencapadbury+github@protonmail.com'},
+  {name = 'Ben Padbury'},
+]
+
+dependencies = [
+    'selenium >= 3.141.0',
+    'selenium-wire >= 3.0.5',
+]
+
+[project.optional-dependencies]
+tests = [
+  'pytest >= 6.2.5',
+]
+
+
+[build-system]
+requires = [
+    'setuptools >= 35.0.2',
+]
+build-backend = 'setuptools.build_meta'
