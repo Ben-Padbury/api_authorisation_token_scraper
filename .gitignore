@@ -1,8 +1,9 @@
 # Workspace files.
 .idea
-
-# Virtual Workspace.
 venv
+
+# Testing files.
+tests/.pytest_cache
 
 # Various log files.
 geckodriver.log
