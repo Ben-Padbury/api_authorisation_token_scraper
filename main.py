@@ -1,5 +1,8 @@
 from seleniumwire import webdriver
 
+# TODO: This currently only works for the podcast API. This may be a shared API token that works with the various APIs,
+#  but if not we need to make this more generic.
+
 try:
     # Setup headless Firefox web driver.
     fireFoxOptions = webdriver.FirefoxOptions()
