@@ -18,8 +18,10 @@ import api_authorisation_token_scraper.apple.podcasts as sut
 
 # Test that we get back an actual bearer token.
 def test_output():
+    print('test-1')
     token = sut.get_bearer_token()
     # TODO: Remove print.
+    print('test-2')
     print(token)
     assert 'Bearer ' in token
     return 'Bearer' in token
