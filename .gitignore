@@ -1,12 +1,9 @@
 # Workspace files.
 .idea
-venv
+.venv
 
 # Testing files.
 tests/.pytest_cache
 
 # Various log files.
 geckodriver.log
-
-# Cache file.
-authorisation_cache.json
