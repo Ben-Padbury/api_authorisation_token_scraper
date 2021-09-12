@@ -1,5 +1,5 @@
-import api_authorisation_token_scraper.apple.podcasts as scraper
+import api_authorisation_token.scraper.apple.podcasts as scraper
+import api_authorisation_token.cache
 
-# Open the cache file and write the bearer token to it.
-with open('authorisation_cache', 'w') as file:
-    file.write(scraper.get_bearer_token())
+# Cache the bearer token.
+cache.cache(cache.filename, scraper.get_bearer_token())

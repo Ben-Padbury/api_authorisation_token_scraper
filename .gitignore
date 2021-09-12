@@ -8,3 +8,4 @@ tests/.pytest_cache
 # Generated files.
 authorisation_cache
 geckodriver.log
+*.test
