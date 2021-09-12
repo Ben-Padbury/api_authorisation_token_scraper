@@ -1,0 +1,8 @@
+# Workspace files.
+.idea
+
+# Virtual Workspace.
+venv
+
+# Various log files.
+geckodriver.log
