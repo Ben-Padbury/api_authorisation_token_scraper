@@ -1,5 +1,7 @@
 from seleniumwire import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions
 
 
 def get_bearer_token():
@@ -14,8 +16,10 @@ def get_bearer_token():
         driver.scopes = ['https://amp-api.podcasts.apple.com/v1/*']
         driver.get('https://podcasts.apple.com/us/podcast/wrestling-with-johners-podcast/id1442108418')
 
-        # Find the button which makes a request to the API and click it.
-        driver.find_element(By.CSS_SELECTOR, 'button.link:nth-child(1)').click()
+        # Wait for the button which makes a request to the API to be visible, and then click it.
+        WebDriverWait(driver, 90)\
+            .until(expected_conditions.element_to_be_clickable((By.CSS_SELECTOR, 'button.link:nth-child(1)')))\
+            .click()
 
         # Wait for a request which contains the authorisation token.
         request = driver.wait_for_request('https://amp-api.podcasts.apple.com/', 90)
