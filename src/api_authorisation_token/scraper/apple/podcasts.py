@@ -1,4 +1,6 @@
 from seleniumwire import webdriver
+from selenium.webdriver.common.by import By
+
 
 def get_bearer_token():
     try:
@@ -12,8 +14,12 @@ def get_bearer_token():
         driver.scopes = ['https://amp-api.podcasts.apple.com/v1/*']
         driver.get('https://podcasts.apple.com/us/podcast/wrestling-with-johners-podcast/id1442108418')
 
+        # Find the button which makes a request to the API and click it.
+        driver.find_element(By.CSS_SELECTOR, 'button.link:nth-child(1)').click()
+
         # Wait for a request which contains the authorisation token.
         request = driver.wait_for_request('https://amp-api.podcasts.apple.com/', 90)
+        print(request.method)
 
         return request.headers.get('Authorization')
     finally:
