@@ -19,7 +19,6 @@ def get_bearer_token():
 
         # Wait for a request which contains the authorisation token.
         request = driver.wait_for_request('https://amp-api.podcasts.apple.com/', 90)
-        print(request.method)
 
         return request.headers.get('Authorization')
     finally:
