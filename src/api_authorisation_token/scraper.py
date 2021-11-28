@@ -8,7 +8,7 @@ from seleniumwire.webdriver import Firefox
 class Scraper(abc.ABC):    
     def __init__(self):
         self.api_scope = None
-        self.timeout = 120
+        self.timeout = 60
         self.url = None
 
     @classmethod
