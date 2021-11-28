@@ -18,6 +18,7 @@ class Music(Scraper):
         WebDriverWait(driver, self.timeout) \
             .until(expected_conditions.element_to_be_clickable((By.CSS_SELECTOR, 'button.playback-button'))) \
             .move_to()
+        # TODO: Try pointer actions.
 
         # Wait for a request which contains the authorisation token, and return it.
         return driver.wait_for_request(self.api_scope, self.timeout).headers.get('Authorization')
