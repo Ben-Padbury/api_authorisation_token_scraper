@@ -3,23 +3,19 @@ from api_authorisation_token.scraper import Scraper
 from api_authorisation_token.api.apple.podcasts import Podcasts
 import argparse
 
+# Define a dictionary of the supported APIs, linking a human readable/writable identifier to the Scraper implementation.
+apis = dict[str, Scraper]([('apple/podcasts', Podcasts)])
+
 # Setup argument parser; describing the program and arguments.
 parser = argparse.ArgumentParser(description='This program scrapes the tokens from supported APIs.')
 parser.add_argument(
     '-a',
     '--api',
-    choices=['apple/podcasts'],
-    metavar='API',
+    choices=apis.keys(),
     required=True,
     help='The API to scrape the token from.'
 )
 arguments = parser.parse_args()
 
-
-# Map the provided argument to an instance of a Scraper.
-def map_api_to_scraper(name) -> Scraper:
-    return {'apple/podcasts': Podcasts()}[name]
-
-
 # Cache the bearer token.
-cacher.cache(cacher.filename, map_api_to_scraper(arguments.api).scrape())
+cacher.cache(cacher.filename, apis[arguments.api]().scrape())
