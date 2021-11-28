@@ -16,5 +16,5 @@ parser.add_argument(
 )
 arguments = parser.parse_args()
 
-# Print the bearer token.
+# Output the bearer token.
 print(apis[arguments.api]().scrape())
