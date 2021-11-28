@@ -1,4 +1,5 @@
 from api_authorisation_token import cacher
+from api_authorisation_token.scraper import Scraper
 from api_authorisation_token.api.apple.podcasts import Podcasts
 import argparse
 
@@ -14,5 +15,11 @@ parser.add_argument(
 )
 arguments = parser.parse_args()
 
+
+# Map the provided argument to an instance of a Scraper.
+def map_api_to_scraper(name) -> Scraper:
+    return {'apple/podcasts': Podcasts()}[name]
+
+
 # Cache the bearer token.
-cacher.cache(cacher.filename, Podcasts().scrape())
+cacher.cache(cacher.filename, map_api_to_scraper(arguments.api).scrape())
