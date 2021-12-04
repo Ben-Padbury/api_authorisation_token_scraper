@@ -8,22 +8,20 @@ from seleniumwire.webdriver import Firefox
 class Scraper(abc.ABC):    
     def __init__(self):
         self.api_scope = None
-        self.timeout = 60
+        self.timeout = 90
         self.url = None
 
     @classmethod
     @abc.abstractmethod
-    def get_bearer_token(cls, driver: Firefox) -> string:
+    def make_api_request(cls, driver: Firefox) -> string:
         pass
 
     def scrape(self) -> string:
-        try:
-            driver = self.setup_web_driver()
-            return self.get_bearer_token(driver)
-        finally:
-            # Try to close the driver, should it exist.
-            if 'driver' in locals() and driver is not None:
-                driver.close()
+        with self.setup_web_driver() as driver:
+            self.make_api_request(driver)
+
+            # Wait for a request which contains the authorisation token, and return it.
+            return driver.wait_for_request(self.api_scope, self.timeout).headers.get('Authorization')
 
     # Setup headless Firefox web driver.
     def setup_web_driver(self) -> Firefox:
