@@ -13,19 +13,19 @@ class Scraper(abc.ABC):
     def __init__(self):
         self.timeout = 90
 
-    def make_api_request(self, driver: Firefox) -> None:
-        # By default, assume that the API request should be made just by making the initial connection, so do nothing.
-        return None
-
     def scrape(self) -> string:
-        with self.setup_web_driver() as driver:
-            self.make_api_request(driver)
+        with self._setup_web_driver() as driver:
+            self._make_api_request(driver)
 
             # Wait for a request which contains the authorisation token, and return it.
             return driver.wait_for_request(self.api_scope, self.timeout).headers.get('Authorization')
 
+    def _make_api_request(self, driver: Firefox) -> None:
+        # By default, assume that the API request should be made just by making the initial connection, so do nothing.
+        return None
+
     # Setup headless Firefox web driver.
-    def setup_web_driver(self) -> Firefox:
+    def _setup_web_driver(self) -> Firefox:
         fireFoxOptions = webdriver.FirefoxOptions()
         fireFoxOptions.headless = True
 
