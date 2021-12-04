@@ -1,10 +1,14 @@
 # Workspace files.
 .idea
-.venv
+venv
+
+# Build files.
+build
+dist
+src/api_authorisation_token_scraper.egg-info
 
 # Testing files.
 tests/.pytest_cache
 
 # Generated files.
 geckodriver.log
-*.test

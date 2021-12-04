@@ -4,12 +4,13 @@ version = "0.0.1"
 description = 'Scrape authorisation tokens for various APIs.'
 requires-python = ">=3.9"
 authors = [
-  {email = 'bencapadbury+github@protonmail.com'},
-  {name = 'Ben Padbury'},
+    { email = 'bencapadbury+github@protonmail.com' },
+    { name = 'Ben Padbury' },
 ]
 
 [build-system]
 requires = [
-    'setuptools >= 35.0.2',
+    "setuptools",
+    "wheel"
 ]
-build-backend = 'setuptools.build_meta'
+build-backend = "setuptools.build_meta"
