@@ -1,7 +1,10 @@
 # Workspace files.
 .idea
-dist
 venv
+
+# Build files.
+dist
+src/api_authorisation_token_scraper.egg-info
 
 # Testing files.
 tests/.pytest_cache
