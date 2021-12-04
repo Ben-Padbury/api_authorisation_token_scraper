@@ -11,7 +11,7 @@ class Music(Scraper):
     def __init__(self):
         super().__init__()
         self.api_scope = 'https://amp-api.music.apple.com/'
-        self.timeout = 70
+        self.timeout = 90
         self.url = 'https://music.apple.com/gb/browse'
 
     def get_bearer_token(self, driver: Firefox) -> string:
