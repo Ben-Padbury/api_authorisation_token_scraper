@@ -5,16 +5,17 @@ from seleniumwire import webdriver
 from seleniumwire.webdriver import Firefox
 
 
-class Scraper(abc.ABC):    
-    def __init__(self):
-        self.api_scope = None
-        self.timeout = 90
-        self.url = None
+class Scraper(abc.ABC):
+    api_scope = None
+    timeout = None
+    url = None
 
-    @classmethod
-    @abc.abstractmethod
-    def make_api_request(cls, driver: Firefox) -> string:
-        pass
+    def __init__(self):
+        self.timeout = 90
+
+    def make_api_request(self, driver: Firefox) -> None:
+        # By default, assume that the API request should be made just by making the initial connection, so do nothing.
+        return None
 
     def scrape(self) -> string:
         with self.setup_web_driver() as driver:
