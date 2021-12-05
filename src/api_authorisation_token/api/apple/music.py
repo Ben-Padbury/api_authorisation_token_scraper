@@ -6,6 +6,10 @@ from seleniumwire.webdriver import Firefox
 
 
 class Music(Scraper):
+    """The Music class is an extension of the Scraper class that is designed for scraping the authorisation token
+     from the Apple Music API.
+     """
+
     def __init__(self):
         super().__init__()
         self.api_scope = 'https://amp-api.music.apple.com/'
