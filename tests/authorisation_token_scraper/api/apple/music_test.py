@@ -1,4 +1,4 @@
-from authorisation_token_scraper.api import Music
+from authorisation_token_scraper.api.apple.music import Music
 
 # Get an instance of the system we will be testing.
 systemUnderTest = Music()
