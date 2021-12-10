@@ -1,4 +1,4 @@
-from api_authorisation_token.scraper import Scraper
+from authorisation_token.scraper import Scraper
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait

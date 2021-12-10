@@ -1,7 +1,7 @@
-from api_authorisation_token.api.apple.music import Music
+from authorisation_token.api.apple.podcasts import Podcasts
 
 # Get an instance of the system we will be testing.
-systemUnderTest = Music()
+systemUnderTest = Podcasts()
 
 
 # Test that we get back an actual bearer token.
