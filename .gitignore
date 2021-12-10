@@ -5,7 +5,7 @@ venv
 # Build files.
 build
 dist
-src/api_authorisation_token_scraper.egg-info
+src/*.egg-info
 
 # Testing files.
 tests/.pytest_cache
