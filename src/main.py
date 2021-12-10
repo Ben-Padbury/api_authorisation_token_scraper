@@ -1,6 +1,6 @@
 import argparse
 
-from authorisation_token.api import Music
+from authorisation_token.api.apple.music import Music
 from authorisation_token.api.apple.podcasts import Podcasts
 from authorisation_token.scraper import Scraper
 
