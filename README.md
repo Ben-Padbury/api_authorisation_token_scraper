@@ -1,7 +1,7 @@
 # Authorisation token scraper
 
-A python script to scrape various authorisation bearer tokens for use externally. Currently only support Apple
-podcasts API.
+A python script to scrape various authorisation bearer tokens for use externally. Currently, only supports predefined
+APIs.
 
 ## Driver
 
@@ -10,3 +10,13 @@ before the scraper can be run. Make sure it’s in your PATH, e.g. place it in `
 
 Failure to observe this step will give you an error `selenium.common.exceptions.WebDriverException:
 Message:‘geckodriver’ executable needs to be in PATH`.
+
+## APIs
+
+The supported APIs are listed below. If there are multiple APIs from the same source/company, then they will be
+collected under a subsection.
+
+#### Apple
+
+- Music
+- Podcasts
