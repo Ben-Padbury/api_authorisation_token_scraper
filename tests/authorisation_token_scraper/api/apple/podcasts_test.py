@@ -1,4 +1,4 @@
-from authorisation_token.api.apple.podcasts import Podcasts
+from authorisation_token_scraper.api.apple.podcasts import Podcasts
 
 # Get an instance of the system we will be testing.
 systemUnderTest = Podcasts()

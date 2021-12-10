@@ -1,6 +1,6 @@
-# API authorisation token scraper
+# Authorisation token scraper
 
-A python script to scrape various API authorisation bearer tokens for use externally. Currently only support Apple
+A python script to scrape various authorisation bearer tokens for use externally. Currently only support Apple
 podcasts API.
 
 ## Driver
