@@ -1,4 +1,4 @@
-from api_authorisation_token.scraper import Scraper
+from authorisation_token_scraper.scraper import Scraper
 
 
 class Podcasts(Scraper):

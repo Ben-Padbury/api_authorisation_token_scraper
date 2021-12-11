@@ -1,7 +1,7 @@
-from api_authorisation_token.api.apple.music import Music
+from authorisation_token_scraper.api.apple.podcasts import Podcasts
 
 # Get an instance of the system we will be testing.
-systemUnderTest = Music()
+systemUnderTest = Podcasts()
 
 
 def test_scrape():

@@ -1,8 +1,8 @@
 import argparse
 
-from api_authorisation_token.api.apple.music import Music
-from api_authorisation_token.api.apple.podcasts import Podcasts
-from api_authorisation_token.scraper import Scraper
+from authorisation_token_scraper.api.apple.music import Music
+from authorisation_token_scraper.api.apple.podcasts import Podcasts
+from authorisation_token_scraper.scraper import Scraper
 
 # Define a dictionary of the supported APIs, linking a human readable/writable identifier to the Scraper implementation.
 apis = dict[str, Scraper]([('apple/music', Music), ('apple/podcasts', Podcasts)])
